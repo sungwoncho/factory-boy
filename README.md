@@ -80,8 +80,8 @@ describe("submitPost", function(){
 });
 ```
 
-Note that `FactoryBoy.build` returns a plain object without `_id`. This makes
-it easy to do things with it like shown above.
+Note that `FactoryBoy.build` returns a plain object without `_id`. It does not
+pretend to be a Mongo document--pass it around as a plain object.
 
 * Insert test data
 

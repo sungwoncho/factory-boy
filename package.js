@@ -6,6 +6,10 @@ Package.describe({
   documentation: 'README.md'
 });
 
+Npm.depends({
+  'deep-extend': '0.4.0'
+});
+
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3');
   api.use('underscore');

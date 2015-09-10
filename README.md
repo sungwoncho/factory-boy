@@ -32,7 +32,7 @@ FactoryBoy.define('post', Posts, {
 Build an object using the factory with the given name. Previously defined
 attributes can be overwritten.
 
-Returns the object that is built.
+Returns the object that is built. The returned object does not have `_id`.
 
 ```javascript
 FactoryBoy.build('post');

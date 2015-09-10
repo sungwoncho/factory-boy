@@ -11,6 +11,12 @@ collections.
     meteor add sungwoncho:factory-boy
 
 
+## How is it different?
+
+FactoryBoy was built with testing in mind. See
+[testing example](https://github.com/sungwoncho/factory-boy#testing) below.
+
+
 ## API
 
 #### FactoryBoy.define(name, collection, attributes)
@@ -61,6 +67,8 @@ Posts.findOne(postId);
 
 FactoryBoy is great for writing tests. Below is an example of a test using Mocha.
 
+* Build a plain object
+
 ```javascript
 describe("submitPost", function(){
   it("creates a post", function(){
@@ -72,12 +80,10 @@ describe("submitPost", function(){
 });
 ```
 
-All the logic related to building a post document lives in the 'post' factory.
+Note that `FactoryBoy.build` returns a plain object without `_id`. This makes
+it easy to do things with it like shown above.
 
-When a schema changes, you simply need to change the factory definition to
-pass all the validations, rather than performing a shot-gun surgery.
-
-Note that `FactoryBoy.build` returns a plain object without `_id`.
+* Insert test data
 
 You can also set up data for the test using `Factory.create`
 
@@ -93,6 +99,39 @@ it("can update a category name", function(){
   expect(updatedCategory.name).to.equal('anotherName');
 });
 ```
+
+#### General
+
+All the logic related to building a specific document lives in a factory.
+
+When a schema changes, you simply need to change the factory definition to
+pass all the validations, rather than performing a shot-gun surgery.
+
+```javascript
+FactoryBoy.define('comment', Comment, {
+  author: 'Dennis Reynolds',
+  body: 'Do you think there should be a mask of me, and I should wear it?'
+});
+
+CommentSchema = {
+  author: {
+    type: String
+  },
+  body: {
+    type: String
+  },
+  tags: {              //
+    type: [String]     // Newly added
+  }                    //
+};
+
+FactoryBoy.define('comment', Comment, {
+  author: 'Dennis Reynolds',
+  body: 'Do you think there should be a mask of me, and I should wear it?',
+  tags: ['funny']      // Add new property
+});
+```
+
 
 ## Contributing
 

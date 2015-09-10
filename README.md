@@ -55,9 +55,9 @@ Insert a new document to the collection using the given factory.
 Previously defined attributes can be overwritten. Returns the inserted document.
 
 ```javascript
-var postId = FactoryBoy.create('post');
+var post = FactoryBoy.create('post');
 
-Posts.findOne(postId);
+Posts.findOne(post._id);
 // => {title: 'Hello World', author: {_id: 'testAuthorId', name: 'jon'}}
 ```
 

@@ -88,15 +88,15 @@ pretend to be a Mongo document--pass it around as a plain object.
 You can also set up data for the test using `FactoryBoy.create`
 
 ```javascript
-it("can update a category name", function(){
-  var categoryId = Categories.insert({
-    name: 'testName',
+it("can update a episode name", function(){
+  var episode = FactoryBoy.create('episode', {
+    name: 'The Gang Broke Dee'
   });
 
-  Meteor.call('updateCategoryName', categoryId, 'anotherName');
+  Meteor.call('updateEpisodeName', episode._id, 'Charlie Rules the World');
 
-  var updatedCategory = Categories.findOne(categoryId);
-  expect(updatedCategory.name).to.equal('anotherName');
+  var updatedEpisode = Episodes.findOne(episode._id);
+  expect(updatedEpisode.name).to.equal('Charlie Rules the World');
 });
 ```
 

@@ -115,3 +115,24 @@ Tinytest.add('.build - can overwrite a nested attribute', function (test) {
   // Teardown
   FactoryBoy._factories = [];
 });
+
+Tinytest.add('.alias - defines a duplicate factory with an alias', function (test) {
+  FactoryBoy.define('fruit', Fruits, {
+    name: 'banana'
+  });
+  FactoryBoy.alias('fruit', 'fruta');
+
+  test.equal(FactoryBoy._factories.length, 2);
+  var frutaFactory = _.findWhere(FactoryBoy._factories, {name: 'fruta'});
+  var fruitFactory = _.findWhere(FactoryBoy._factories, {name: 'fruit'});
+  // Make sure the factories exist
+  test.isNotUndefined(frutaFactory);
+  test.isNotUndefined(fruitFactory);
+
+  // Check the properties are the same
+  test.equal(frutaFactory.collection, Fruits);
+  test.isTrue(_.isEqual(frutaFactory.attributes, fruitFactory.attributes));
+
+  // Teardown
+  FactoryBoy._factories = [];
+});

@@ -85,7 +85,7 @@ pretend to be a Mongo document--pass it around as a plain object.
 
 * Insert test data
 
-You can also set up data for the test using `Factory.create`
+You can also set up data for the test using `FactoryBoy.create`
 
 ```javascript
 it("can update a category name", function(){

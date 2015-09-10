@@ -1,6 +1,6 @@
 Package.describe({
   name: 'sungwoncho:factory-boy',
-  version: '0.0.1',
+  version: '0.1.0',
   summary: 'Meteor factory to build documents for tests',
   git: '',
   documentation: 'README.md'

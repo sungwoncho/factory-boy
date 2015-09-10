@@ -46,8 +46,7 @@ FactoryBoy.build('post', {title: 'Cool story, bro.'});
 
 Insert a new document to the collection using the given factory.
 
-Previously defined attributes can be overwritten. Returns the `_id` of the
-inserted document.
+Previously defined attributes can be overwritten. Returns the inserted document.
 
 ```javascript
 var postId = FactoryBoy.create('post');

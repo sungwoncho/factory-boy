@@ -6,20 +6,20 @@ Package.describe({
   documentation: 'README.md'
 });
 
-Npm.depends({
-  'deep-extend': '0.4.0'
-});
-
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3');
-  api.use('underscore');
-  api.addFiles('lib/factory-boy.js');
+  api.use('stevezhu:lodash@3.10.1', ['client', 'server']);
+
+  api.addFiles([
+    'lib/factory_boy.js'
+  ], ['client', 'server']);
 
   api.export('FactoryBoy');
 });
 
 Package.onTest(function(api) {
   api.use('tinytest');
+  api.use('mongo');
   api.use('sungwoncho:factory-boy');
-  api.addFiles('tests/factory-boy-tests.js');
+  api.addFiles('tests/factory_boy_tests.js');
 });

@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "deep-extend": {
-      "version": "0.4.0"
-    }
-  }
-}

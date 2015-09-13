@@ -61,6 +61,14 @@ Posts.findOne(post._id);
 // => {_id: 'xevpMuN2yi92CkNfA', title: 'Hello World', author: {_id: 'testAuthorId', name: 'jon'}}
 ```
 
+#### FactoryBoy.destroyAll(name)
+
+Removes all documents in the collection using the given factory.
+
+```javascript
+var post = FactoryBoy.destroyAll('post');
+```
+
 ## Examples
 
 #### Testing

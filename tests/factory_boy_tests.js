@@ -115,3 +115,19 @@ Tinytest.add('.build - can overwrite a nested attribute', function (test) {
   // Teardown
   FactoryBoy._factories = [];
 });
+
+Tinytest.add('.destroyAll - removes all records', function (test) {
+  // Setup
+  FactoryBoy.define('fruit', Fruits, {name: 'banana'});
+  Fruits.insert({name: 'apple'});
+  Fruits.insert({name: 'orange'});
+  test.equal(Fruits.find().count(), 2);
+
+  // Act
+  FactoryBoy.destroyAll('fruit');
+  test.equal(Fruits.find().count(), 0);
+
+  // Teardown
+  FactoryBoy._factories = [];
+  Fruits.remove({});
+});

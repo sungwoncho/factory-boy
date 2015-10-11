@@ -5,12 +5,6 @@ A minimalistic factory for Meteor
 Build plain objects using predefined attributes or persist them in Mongo
 collections.
 
-
-## Install
-
-    meteor add sungwoncho:factory-boy
-
-
 ## How is it different?
 
 FactoryBoy was built with testing in mind. See

@@ -8,7 +8,11 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3');
-  api.use('stevezhu:lodash@3.10.1', ['client', 'server']);
+
+  var packages = ['stevezhu:lodash@3.10.1'];
+
+  api.use(packages, ['client', 'server']);
+  api.imply(packages, ['client', 'server']);
 
   api.addFiles([
     'lib/factory_boy.js'

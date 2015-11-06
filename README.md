@@ -60,7 +60,7 @@ Previously defined attributes can be overwritten. Returns the inserted document.
 var post = FactoryBoy.create('post');
 
 Posts.findOne(post._id);
-// => {title: 'Hello World', author: {_id: 'testAuthorId', name: 'jon'}}
+// => {_id: 'xevpMuN2yi92CkNfA', title: 'Hello World', author: {_id: 'testAuthorId', name: 'jon'}}
 ```
 
 ## Examples

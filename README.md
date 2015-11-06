@@ -1,5 +1,7 @@
 # FactoryBoy [![Build Status](https://travis-ci.org/sungwoncho/factory-boy.svg?branch=master)](https://travis-ci.org/sungwoncho/factory-boy)
 
+[![Meteor Icon](http://icon.meteor.com/package/sungwoncho:factory-boy)](https://atmospherejs.com/sungwoncho/factory-boy)
+
 A minimalistic factory for Meteor
 
 Build plain objects using predefined attributes or persist them in Mongo

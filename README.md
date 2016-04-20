@@ -1,6 +1,4 @@
-# FactoryBoy [![Build Status](https://travis-ci.org/sungwoncho/factory-boy.svg?branch=master)](https://travis-ci.org/sungwoncho/factory-boy)
-
-[![Vym](https://img.shields.io/badge/Reviewing%20with-Vym-blue.svg)](https://vym.io)
+# FactoryBoy [![Build Status](https://travis-ci.org/sungwoncho/factory-boy.svg?branch=master)](https://travis-ci.org/sungwoncho/factory-boy) [![Vym](https://img.shields.io/badge/Reviewing%20with-Vym-blue.svg)](https://vym.io)
 
 A minimalistic factory for Meteor
 
